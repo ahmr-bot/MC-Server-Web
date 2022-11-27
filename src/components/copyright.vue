@@ -2,16 +2,15 @@
  * @Author: ahmr-bot ahmrcxy@gmail.com
  * @Date: 2022-11-27 09:51:15
  * @LastEditors: ahmr-bot ahmrcxy@gmail.com
- * @LastEditTime: 2022-11-27 10:01:21
+ * @LastEditTime: 2022-11-27 10:13:00
  * @FilePath: \MC\src\components\copyright.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
 <template>
     <v-footer>
-        <div  class="text-center">
+        <v-col  class="text-center">
         版权所有 © {{ new Date().getFullYear() }} — <strong href="https://aehxy.com">Aehxy</strong>
-        </div>
-        <div>服主: {{ list.owner }}</div></v-footer>
+        </v-col></v-footer>
 </template>
 <script setup>
 import { ref } from 'vue'

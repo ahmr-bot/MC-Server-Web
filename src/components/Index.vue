@@ -2,7 +2,7 @@
  * @Author: ahmr-bot ahmrcxy@gmail.com
  * @Date: 2022-11-24 12:54:06
  * @LastEditors: ahmr-bot ahmrcxy@gmail.com
- * @LastEditTime: 2022-11-27 09:59:59
+ * @LastEditTime: 2022-11-27 10:14:17
  * @FilePath: \Friends\Friends\src\components\HelloWorld.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -12,7 +12,7 @@
     <v-app-bar  color="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Frp 内网穿透联盟</v-toolbar-title>
+      <v-toolbar-title>{{ lists.name }}服务器官网</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" expand-on-hover rail permanent>
@@ -27,7 +27,7 @@
             <v-img
             cover
             height="300"
-        src="https://pic1.afdiancdn.com/user/02110724710411eba4a552540025c377/common/5303400e57b9660b37a06228898a08ce_w1920_h1080_s1536.jpg?imageView2/1/w/1500/h/750"
+        :src="list.img"
       ></v-img>
       <v-card-title class="text-h6" >{{ list.name }}</v-card-title>
       <v-card-text>{{ list.description }}</v-card-text>
@@ -42,6 +42,7 @@
             <div>服务器地址: <strong>{{ list.address }}</strong></div>
             <div>服务器版本: <strong>{{ list.version }}</strong></div>
             <div>服务器状态: <strong>{{ status.status }}</strong></div>
+            <div>服主: <strong>{{ list.owner }}</strong></div>
             <div>服务器在线人数：<strong>{{ status.players_online }} / {{ status.players_max}}</strong></div>
           </v-card-text>
           </v-card>
