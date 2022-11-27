@@ -1,5 +1,6 @@
-[
-    {
+
+        [
+            {
         "name": "测试MC服务器",
         "description": "测试服务器是一个友善和谐的服务器，无需正版",
         "version": "JE 1.18",
@@ -7,6 +8,7 @@
         "grouplink": "https://qq.com",
         "download": "https://donwload.com",
         "owner": "lbw",
+        "icp": "备案号",
         "img": "https://pic1.afdiancdn.com/user/02110724710411eba4a552540025c377/common/5303400e57b9660b37a06228898a08ce_w1920_h1080_s1536.jpg?imageView2/1/w/1500/h/750"
-    }
-]
+            }    
+    ]

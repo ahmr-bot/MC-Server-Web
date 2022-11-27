@@ -2,7 +2,7 @@
  * @Author: ahmr-bot ahmrcxy@gmail.com
  * @Date: 2022-11-24 12:54:06
  * @LastEditors: ahmr-bot ahmrcxy@gmail.com
- * @LastEditTime: 2022-11-27 10:14:17
+ * @LastEditTime: 2022-11-27 21:43:37
  * @FilePath: \Friends\Friends\src\components\HelloWorld.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -33,6 +33,25 @@
       <v-card-text>{{ list.description }}</v-card-text>
           </v-card>
           <br />
+          <v-card  text="图片……">
+            <v-row
+      class="mb-6"
+      no-gutters
+      v-for="img in imgs"
+    >
+            <v-col  cols="4.5">
+            <v-img :src="img.leftsrc">
+            </v-img>
+          </v-col>
+            <v-col
+        cols="4.5"
+        offset="4.5"
+      >
+            <v-img :src="img.rightsrc">
+            </v-img>
+          </v-col>
+          </v-row>
+          </v-card>
             <v-card v-for="list in lists" text="在线状态">
               <v-img
             height="64"
@@ -71,12 +90,20 @@ function copy(text) {
   navigator.clipboard.writeText(text)
 }
 const lists = ref([])
+const imgs = ref([])
 axios({
   method:'get',
   url:'./list.json'
 }).then((res)=>{
   console.log(res.data)
   lists.value = res.data
+})
+axios({
+  method:'get',
+    url:'./imgs.json'
+}).then((res)=>{
+  console.log(res.data)
+  imgs.value = res.data
 })
 const status = ref([])
 axios({
