@@ -1,18 +1,10 @@
-<!--
- * @Author: ahmr-bot ahmrcxy@gmail.com
- * @Date: 2022-11-24 12:54:06
- * @LastEditors: ahmr-bot ahmrcxy@gmail.com
- * @LastEditTime: 2022-11-27 21:43:37
- * @FilePath: \Friends\Friends\src\components\HelloWorld.vue
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
--->
 <template>
   <v-app id="inspire">
     <!--appbar-->
-    <v-app-bar  color="primary">
+    <v-app-bar v-for="list in lists" color="primary">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>{{ lists.name }}服务器官网</v-toolbar-title>
+      <v-toolbar-title>{{ list.name }} 官网</v-toolbar-title>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" expand-on-hover rail permanent>
@@ -53,23 +45,25 @@
           </v-row>
           </v-card>
             <v-card v-for="list in lists" text="在线状态">
-              <v-img
+             <!--- <v-img
             height="64"
         :src="status.favicon"
-      ></v-img>
+      ></v-img>--->
               <v-card-text>
             <div>服务器地址: <strong>{{ list.address }}</strong></div>
             <div>服务器版本: <strong>{{ list.version }}</strong></div>
             <div>服务器状态: <strong>{{ status.status }}</strong></div>
-            <div>服主: <strong>{{ list.owner }}</strong></div>
             <div>服务器在线人数：<strong>{{ status.players_online }} / {{ status.players_max}}</strong></div>
+            <div>在线玩家: <strong v-for="players in status.players">{{ players.name }}、</strong></div>
           </v-card-text>
           </v-card>
           <br />
           <v-card v-for="list in lists" text="加入服务器">
           <v-card-text>
             <div @click="copy(list.address)">服务器 IP: <strong>{{ list.address }}</strong>←点我复制</div>
-            <v-btn :href="list.download"  color="primary">下载客户端</v-btn><br />
+            <div>{{ list.teachzb }}</div>
+            <div>{{ list.teachwz }}</div>
+            <v-btn :href="list.skin"  color="primary">镜缘皮肤站</v-btn><br />
             <v-btn :href="list.grouplink"  color="primary">加入 QQ 群</v-btn>
           </v-card-text>
           </v-card>
@@ -82,10 +76,10 @@
 </template>
 
 <script setup>
-import copyright from './copyright.vue'
-import List from './list.vue'
-import { ref } from 'vue'
-import axios from 'axios'
+import axios from 'axios';
+import { ref } from 'vue';
+import copyright from './copyright.vue';
+import List from './list.vue';
 function copy(text) {
   navigator.clipboard.writeText(text)
 }
@@ -108,7 +102,7 @@ axios({
 const status = ref([])
 axios({
   method:'get',
-  url: "https://api.imlazy.ink/mcapi/?host=mc.hypixel.net&type=json",
+  url: "https://api.imlazy.ink/mcapi/?host=" + "mc.lrmc.fun" + "&type=json",
 }).then((res)=>{
   console.log(res.data.status)
   status.value = res.data

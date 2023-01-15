@@ -1,14 +1,15 @@
 
         [
             {
-        "name": "测试MC服务器",
-        "description": "测试服务器是一个友善和谐的服务器，无需正版",
+        "name": "落日牧场 Minecraft 服务器",
+        "description": "落日牧场 Minecraft 服务器是一个友善和谐的服务器，支持正版/外置登录",
         "version": "JE 1.18",
-        "address": "sq.awa.im:3344",
-        "grouplink": "https://qq.com",
-        "download": "https://donwload.com",
-        "owner": "lbw",
-        "icp": "备案号",
+        "address": "mc.lrmc.fun",
+        "grouplink": "https://jq.qq.com/?_wv=1027&k=UthDH7S3",
+        "skin": "https://mcskin.mcserverx.com",
+        "icp": "",
+        "teachzb": "正版用户可直接 复制 IP 加入服务器",
+        "teachwz": "外置用户 需先注册 镜缘皮肤站 账户，并创建角色，使用 镜缘皮肤站 的外置登录功能启动游戏，并复制 IP ， 即可加入服务器",
         "img": "https://pic1.afdiancdn.com/user/02110724710411eba4a552540025c377/common/5303400e57b9660b37a06228898a08ce_w1920_h1080_s1536.jpg?imageView2/1/w/1500/h/750"
             }    
     ]
