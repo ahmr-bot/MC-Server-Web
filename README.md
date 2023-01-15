@@ -48,3 +48,5 @@ npm run build
 # pnpm
 pnpm build
 ```
+
+Feature：准备用 ahmr-bot/Portal 代替此仓库
