@@ -102,6 +102,9 @@ axios({
 const status = ref([])
 axios({
   method:'get',
+  headers: {
+    "Access-Control-Allow-Origin": '*',
+  },
   url: "https://api.imlazy.ink/mcapi/?host=" + "mc.lrmc.fun" + "&type=json",
 }).then((res)=>{
   console.log(res.data.status)
