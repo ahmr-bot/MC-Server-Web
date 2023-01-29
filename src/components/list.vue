@@ -17,12 +17,12 @@
     </v-list>
     <v-divider></v-divider>
     <v-list>
-      <v-list-item prepend-icon="home" href="https://127.0.0.2" title="页面"></v-list-item>
+      <v-list-item prepend-icon="home" href="" title="页面"></v-list-item>
     </v-list>
 </template>
 <script setup>
-import { ref } from 'vue'
-import axios from 'axios'
+import axios from 'axios';
+import { ref } from 'vue';
 const avatar = './favicon.ico'
 console.log(avatar)
 const lists = ref([])

@@ -105,7 +105,7 @@ axios({
   headers: {
     "Access-Control-Allow-Origin": '127.0.0.1',
   },
-  url: "https://api.imlazy.ink/mcapi/?host=" + "mc.lrmc.fun" + "&type=json",
+  url: "https://cdn.5-5.site/mcapi/?host=sq.awa.im&port=3004",
 }).then((res)=>{
   console.log(res.data.status)
   status.value = res.data
