@@ -45,10 +45,6 @@
           </v-row>
           </v-card>
             <v-card v-for="list in lists" text="在线状态">
-             <!--- <v-img
-            height="64"
-        :src="status.favicon"
-      ></v-img>--->
               <v-card-text>
             <div>服务器地址: <strong>{{ list.address }}</strong></div>
             <div>服务器状态: <strong>{{ status.status }}</strong></div>
