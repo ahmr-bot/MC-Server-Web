@@ -51,10 +51,8 @@
       ></v-img>--->
               <v-card-text>
             <div>服务器地址: <strong>{{ list.address }}</strong></div>
-            <div>服务器版本: <strong>{{ list.version }}</strong></div>
             <div>服务器状态: <strong>{{ status.status }}</strong></div>
-            <div>服务器在线人数：<strong>{{ status.players_online }} / {{ status.players_max}}</strong></div>
-            <div>在线玩家: <strong v-for="players in status.players">{{ players.name }}、</strong></div>
+            <div>服务器在线人数：<strong>{{ status.players }}</strong></div>
           </v-card-text>
           </v-card>
           <br />
@@ -102,10 +100,7 @@ axios({
 const status = ref([])
 axios({
   method:'get',
-  headers: {
-    "Access-Control-Allow-Origin": '127.0.0.1',
-  },
-  url: "https://cdn.5-5.site/mcapi/?host=sq.awa.im&port=3004",
+  url: "https://uapis.cn/api/mcserver?server=gloxina.top&port=25565",
 }).then((res)=>{
   console.log(res.data.status)
   status.value = res.data
