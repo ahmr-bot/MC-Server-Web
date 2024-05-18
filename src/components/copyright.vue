@@ -5,9 +5,8 @@
         </v-col>
     </v-footer>
     <v-footer>
-      添加萌ICP备案号
-    <v-col class="text-center" href="https://icp.gov.moe/?keyword=20226999">
-      萌ICP备20226999号
+    <v-col class="text-center">
+      <a href="https://icp.gov.moe/?keyword=20226999">萌ICP备20226999号</a>
     </v-col>
     </v-footer>
         <v-footer v-for="list in lists">
